@@ -24,7 +24,7 @@ class SubShooter : public frc2::SubsystemBase {
   frc2::CommandPtr CmdStartShooter(int power);
 
  private:
-  ICSparkMax _flyWheelMotor {1, 30_A};
+  ICSparkMax _flyWheelMotor {2, 30_A};
   frc::sim::DCMotorSim _flyWheelSim {frc::DCMotor::Falcon500(), 1, 0.005_kg_sq_m};
 
 };

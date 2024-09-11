@@ -7,6 +7,9 @@
   "NetworkTables": {
     "transitory": {
       "SmartDashboard": {
+        "Intake": {
+          "open": true
+        },
         "Shooter": {
           "open": true
         },
