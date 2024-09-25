@@ -7,6 +7,8 @@
 
 SubShooter::SubShooter() {
     _flyWheelMotor.SetPIDFF(1,0,0);
+    frc::SmartDashboard::PutNumber("Shooter/Flywheel rotation (turns)", 0);
+    frc::SmartDashboard::PutNumber("Shooter/Flywheel velocity (tps)", 0);
 }
 
 // This method will be called once per scheduler run
@@ -21,12 +23,12 @@ void SubShooter::SimulationPeriodic() {
     _flyWheelMotor.UpdateSimEncoder(_flyWheelSim.GetAngularPosition(),_flyWheelSim.GetAngularVelocity());
 }
 
-void SubShooter::StartShooter(int power) {
-    power = std::clamp(power, -1, 1);
+void SubShooter::StartShooter(double power) {
+    power = std::clamp(power, -1.0, 1.0);
     _flyWheelMotor.Set(power);
 }
 
-frc2::CommandPtr SubShooter::CmdStartShooter(int power) {
+frc2::CommandPtr SubShooter::CmdStartShooter(double power) {
     return Run([this, power] {
         StartShooter(power);
     });

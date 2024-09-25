@@ -5,7 +5,9 @@
 #include "subsystems/SubIntake.h"
 #include <frc/smartdashboard/SmartDashboard.h>
 
-SubIntake::SubIntake() {}
+SubIntake::SubIntake() {
+    frc::SmartDashboard::PutNumber("Intake/Power", 0);
+}
 
 // This method will be called once per scheduler run
 void SubIntake::Periodic() {

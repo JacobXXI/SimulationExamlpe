@@ -20,8 +20,8 @@ class SubShooter : public frc2::SubsystemBase {
   void Periodic() override;
   void SimulationPeriodic() override;
 
-  void StartShooter(int power);
-  frc2::CommandPtr CmdStartShooter(int power);
+  void StartShooter(double power);
+  frc2::CommandPtr CmdStartShooter(double power);
 
  private:
   ICSparkMax _flyWheelMotor {2, 30_A};

@@ -6,12 +6,16 @@
 #include <frc2/command/Commands.h>
 #include "subsystems/SubShooter.h"
 #include "subsystems/SubIntake.h"
+#include "subsystems/SubClimber.h"
 
 RobotContainer::RobotContainer() {
   ConfigureBindings();
 }
 
 void RobotContainer::ConfigureBindings() {
+  // _mainController.A().OnTrue(SubClimber::GetInstance().CmdStartClimber(0.0));
+  // _mainController.X().OnTrue(SubClimber::GetInstance().CmdStartClimber(-1.0));
+  // _mainController.Y().OnTrue(SubClimber::GetInstance().CmdStartClimber(1.0));
   _mainController.X().OnTrue(SubIntake::GetInstance().On());
   _mainController.Y().OnTrue(SubIntake::GetInstance().Off());
   // _mainController.X().OnTrue(SubShooter::GetInstance().CmdStartShooter(1));
